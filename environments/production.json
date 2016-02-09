@@ -1,6 +1,6 @@
 {
-  "name": "development",
-  "description": "The master development branch",
+  "name": "production",
+  "description": "The master production branch",
   "cookbook_versions": {
 
   },
