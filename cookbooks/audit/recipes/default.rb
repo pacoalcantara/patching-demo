@@ -4,6 +4,7 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
+# This is a test of audit and compliance
 control_group 'Validate web services' do
   control 'Ensure no web files are owned by the root user' do
     Dir.glob('/var/www/html/**/*') {|web_file|
