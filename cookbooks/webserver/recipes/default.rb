@@ -4,6 +4,15 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
+# Compliance Demo code - Part 2
+
+include_recipe 'iptables::default'
+
+# Apply firewall rules.
+iptables_rule 'firewall'
+
+# Compliance Demo code - Part 2
+
 # Install the httpd package.
 package 'httpd'
 

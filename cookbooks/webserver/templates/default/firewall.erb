@@ -1,0 +1,18 @@
+# Compliance Demo code - Part 2
+
+# Delete all chains.
+-F
+
+# Allow established connections.
+-A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+
+# Set the default chain policy.
+-P INPUT DROP
+-P OUTPUT ACCEPT
+-P FORWARD DROP
+
+# Allow inbound traffic on port 22 for SSH.
+-A INPUT -i eth0 -p tcp --dport 22 -m state --state NEW -j ACCEPT
+
+# Allow inbound traffic on port 80 for HTTP.
+-A INPUT -i eth0 -p tcp --dport 80 -m state --state NEW -j ACCEPT
