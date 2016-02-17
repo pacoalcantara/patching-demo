@@ -7,9 +7,9 @@
 -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 
 # Set the default chain policy.
--P INPUT DROP
+-P INPUT ACCEPT
 -P OUTPUT ACCEPT
--P FORWARD DROP
+-P FORWARD ACCEPT
 
 # Allow inbound traffic on port 22 for SSH.
 -A INPUT -i eth0 -p tcp --dport 22 -m state --state NEW -j ACCEPT
