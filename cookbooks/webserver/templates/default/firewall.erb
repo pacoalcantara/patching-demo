@@ -2,22 +2,22 @@
 
 # Delete all chains.
 # 全てのチェーンを削除する
-##-F
+-F
 
 # Allow established connections
 # 存在している接続を許可する
-##-A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+-A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 
 # Set the default chain policy
 # デフォルトチェーン・ポリシーを指定する
-##-P INPUT ACCEPT
-##-P OUTPUT ACCEPT
-##-P FORWARD ACCEPT
+-P INPUT ACCEPT
+-P OUTPUT ACCEPT
+-P FORWARD ACCEPT
 
 # Allow inbound traffic on port 22 for SSH.
 # SSH用のポート22で着信トラフィックを許可する
-##-A INPUT -i eth0 -p tcp --dport 22 -m state --state NEW -j ACCEPT
+-A INPUT -i eth0 -p tcp --dport 22 -m state --state NEW -j ACCEPT
 
 # Allow inbound traffic on port 80 for HTTP
 # HTTP用のポート80で着信トラフィックを許可する
-##-A INPUT -i eth0 -p tcp --dport 80 -m state --state NEW -j ACCEPT
+-A INPUT -i eth0 -p tcp --dport 80 -m state --state NEW -j ACCEPT
