@@ -30,7 +30,7 @@ user 'web_admin' do
   shell '/bin/bash'
 end
 
-# Create the pages directory under the document root directory.
+# Create the [pages] directory under the document root directory.
 directory '/var/www/html/pages' do
   group 'web_admin'
   user 'web_admin'
@@ -39,7 +39,7 @@ end
 # Add files to the site.
 %w(index.html pages/page1.html pages/page2.html).each do |web_file|
   file File.join('/var/www/html', web_file) do
-    content "<html> <body> <h1> This is file [#{web_file}] on <%= node['fqdn'] %> - Hello World! </h1> </body> </html>"
+    content "<html> <body> <h1> This is file [#{web_file}] - Hello World! </h1> </body> </html>"
     group 'web_admin'
     user 'web_admin'
   end
