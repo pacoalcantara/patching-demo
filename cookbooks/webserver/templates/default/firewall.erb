@@ -1,18 +1,23 @@
 # Compliance Demo code - Part 2
 
 # Delete all chains.
--F
+# 全てのチェーンを削除する
+##-F
 
-# Allow established connections.
--A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+# Allow established connections
+# 存在している接続を許可する
+##-A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 
-# Set the default chain policy.
--P INPUT ACCEPT
--P OUTPUT ACCEPT
--P FORWARD ACCEPT
+# Set the default chain policy
+#デフォルトチェーン・ポリシーを指定する
+##-P INPUT ACCEPT
+##-P OUTPUT ACCEPT
+##-P FORWARD ACCEPT
 
 # Allow inbound traffic on port 22 for SSH.
--A INPUT -i eth0 -p tcp --dport 22 -m state --state NEW -j ACCEPT
+# SSH用のポート22で着信トラフィックを許可する
+##-A INPUT -i eth0 -p tcp --dport 22 -m state --state NEW -j ACCEPT
 
-# Allow inbound traffic on port 80 for HTTP.
--A INPUT -i eth0 -p tcp --dport 80 -m state --state NEW -j ACCEPT
+# Allow inbound traffic on port 80 for HTTP
+# HTTP用のポート80で着信トラフィックを許可する
+##-A INPUT -i eth0 -p tcp --dport 80 -m state --state NEW -j ACCEPT
