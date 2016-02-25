@@ -39,11 +39,8 @@ end
 # Add files to the site.
 %w(index.html pages/page1.html pages/page2.html).each do |web_file|
   file File.join('/var/www/html', web_file) do
-    content "<html>This is #{web_file}.</html>"
+    content "<html> <body> <h1> This is file <b>#{web_file}</b> - Hello World! </h1> </body> </html>"
     group 'web_admin'
     user 'web_admin'
   end
 end
-
-
-
