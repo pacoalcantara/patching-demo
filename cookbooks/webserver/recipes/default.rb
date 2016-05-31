@@ -15,13 +15,13 @@ iptables_rule 'firewall'
 
 # Install the httpd package.
   #to do --> upgrade and test (inside action)
-package 'httpd'
+#package 'httpd'
 
-#%W{ bash httpd }.each do |pkg|
-#  package "#{pkg}" do
-#    action [ :install, :upgrade ]
-#  end
-#end
+%W{ bash httpd }.each do |pkg|
+  package "#{pkg}" do
+    action [ :install, :upgrade ]
+  end
+end
 
 # Enable and start the httpd service.
 service 'httpd' do
