@@ -18,7 +18,7 @@ end
 control_group 'HTTPD Audit' do
   control 'HTTPD Version Check' do
     it 'httpd version should be 2.2.15-53.el6.centos' do
-      expect(package('bash')).to be_installed.with_version('2.2.15-53.el6.centos')
+      expect(package('httpd')).to be_installed.with_version('2.2.15-53.el6.centos')
     end
   end
 end
