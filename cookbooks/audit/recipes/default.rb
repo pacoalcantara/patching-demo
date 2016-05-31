@@ -4,6 +4,25 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
+
+#if defined? node[:packages][:openssl][:version] && node[:packages][:openssl][:version] < node[:openssl][:req_version]
+control_group 'BASH Audit' do
+  control 'BASH Version Check' do
+    it 'bash version should be 4.1.2-40.el6' do
+      expect(package('bash')).to be_installed.with_version('4.1.2-40.el6')
+    end
+  end
+end
+#end
+
+control_group 'HTTPD Audit' do
+  control 'HTTPD Version Check' do
+    it 'httpd version should be 2.2.15-53.el6.centos' do
+      expect(package('bash')).to be_installed.with_version('2.2.15-53.el6.centos')
+    end
+  end
+end
+
 # This is a test of audit and compliance
 control_group 'Validate web services' do
   control 'Ensure no web files are owned by the root user' do
