@@ -17,7 +17,7 @@ iptables_rule 'firewall'
   #to do --> upgrade and test (inside action)
 #package 'httpd'
 
-%W{ bash httpd }.each do |pkg|
+%w{ bash httpd }.each do |pkg|
   package "#{pkg}" do
     action [ :install, :upgrade ]
   end
