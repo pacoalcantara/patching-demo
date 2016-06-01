@@ -24,12 +24,14 @@ iptables_rule 'firewall'
 #end
 
 yum_package 'bash' do
-  version '4.1.2-15'
+  #version '4.1.2-15.el6_4'
+  version '4.1.2-15.el6'
   allow_downgrade true
 end
 
 yum_package 'httpd' do
-  version '2.2.15-47'
+  #version '2.2.15-47.el6.centos.3'
+  version '2.2.15-47.el6'
   allow_downgrade true
 end
 
