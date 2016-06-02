@@ -4,7 +4,10 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
-#4.1.2-50.el6
+# =========================================
+# Test for PACKAGE versions
+=begin
+# Test for version of BASH
 #if defined? node[:packages][:openssl][:version] && node[:packages][:openssl][:version] < node[:openssl][:req_version]
 control_group 'BASH Audit' do
   control 'BASH Version Check' do
@@ -15,7 +18,7 @@ control_group 'BASH Audit' do
 end
 #end
 
-#2.2.20-60.el6.centos
+# Test for version of HTTPD
 control_group 'HTTPD Audit' do
   control 'HTTPD Version Check' do
     it 'httpd version should be 2.2.15-53.el6.centos' do
@@ -23,6 +26,18 @@ control_group 'HTTPD Audit' do
     end
   end
 end
+
+# Test for version of HTTPD
+control_group 'OPENSSL Audit' do
+  control 'OPENSSL Version Check' do
+    it 'openssl version should be 1.0.1e-48.el6_8.1' do
+      expect(package('openssl')).to be_installed.with_version('1.0.1e-48.el6_8.1')
+    end
+  end
+end
+=end
+# =========================================
+# Test for OS security
 
 # This is a test of audit and compliance
 control_group 'Validate web services' do
