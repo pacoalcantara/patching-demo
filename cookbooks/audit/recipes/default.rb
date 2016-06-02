@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
-
+#4.1.2-50.el6
 #if defined? node[:packages][:openssl][:version] && node[:packages][:openssl][:version] < node[:openssl][:req_version]
 control_group 'BASH Audit' do
   control 'BASH Version Check' do
@@ -15,6 +15,7 @@ control_group 'BASH Audit' do
 end
 #end
 
+#2.2.20-60.el6.centos
 control_group 'HTTPD Audit' do
   control 'HTTPD Version Check' do
     it 'httpd version should be 2.2.15-53.el6.centos' do
