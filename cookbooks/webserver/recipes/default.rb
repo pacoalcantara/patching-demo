@@ -14,26 +14,23 @@ iptables_rule 'firewall'
 # Compliance Demo code - Part 2
 
 # Install the httpd package.
-  #to do --> upgrade and test (inside action)
 #package 'httpd'
 
-#%w{ bash httpd }.each do |pkg|
-#  package "#{pkg}" do
-#    action [ :install, :upgrade ]
-#  end
+%w{ bash httpd }.each do |pkg|
+  package "#{pkg}" do
+    action [ :install, :upgrade ]
+  end
+end
+
+#yum_package 'bash' do
+#  version '4.1.2-15.el6_4'
+#  allow_downgrade true
 #end
 
-yum_package 'bash' do
-  #version '4.1.2-15.el6_4'
-  version '4.1.2-15.el6'
-  allow_downgrade true
-end
-
-yum_package 'httpd' do
-  #version '2.2.15-47.el6.centos.3'
-  version '2.2.15-47.el6'
-  allow_downgrade true
-end
+#yum_package 'httpd' do
+#  version '2.2.15-47.el6.centos.3'
+#  allow_downgrade true
+#end
 
 # Enable and start the httpd service.
 service 'httpd' do
