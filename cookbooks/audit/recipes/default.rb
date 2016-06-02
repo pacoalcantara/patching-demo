@@ -6,7 +6,7 @@
 
 # =========================================
 # Test for PACKAGE versions
-=begin
+
 # Test for version of BASH
 #if defined? node[:packages][:openssl][:version] && node[:packages][:openssl][:version] < node[:openssl][:req_version]
 control_group 'BASH Audit' do
@@ -35,7 +35,7 @@ control_group 'OPENSSL Audit' do
     end
   end
 end
-=end
+
 # =========================================
 # Test for OS security
 
