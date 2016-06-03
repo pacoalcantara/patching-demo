@@ -14,14 +14,14 @@ iptables_rule 'firewall'
 # Compliance Demo code - Part 2
 
 # Install the httpd package.
-#package 'httpd'
-
+package 'httpd'
+=begin
 %w{ bash httpd openssl }.each do |pkg|
   package "#{pkg}" do
     action [ :install, :upgrade ]
   end
 end
-
+=end
 # Enable and start the httpd service.
 service 'httpd' do
   action [:enable, :start]
