@@ -7,7 +7,7 @@
 # =========================================
 # Test for PACKAGE versions
 
-# Test for version of BASH
+# Fix Shellshock
 #if defined? node[:packages][:openssl][:version] && node[:packages][:openssl][:version] < node[:openssl][:req_version]
 control_group 'BASH Audit' do
   control 'BASH Version Check' do
@@ -27,7 +27,7 @@ control_group 'HTTPD Audit' do
   end
 end
 
-# Test for version of HTTPD
+# Fix CVE-2014-0160 (aka. Heartbleed) Versions < openssl-1.0.1e-16.el6_5.7 are vulnerable
 control_group 'OPENSSL Audit' do
   control 'OPENSSL Version Check' do
     it 'openssl version should be 1.0.1e-48.el6_8.1' do
