@@ -9,7 +9,7 @@
 
 # Fix Shellshock
 #if defined? node[:packages][:openssl][:version] && node[:packages][:openssl][:version] < node[:openssl][:req_version]
-control_group 'BASH Audit' do
+control_group ' *BASH Audit*' do
   control 'BASH Version Check' do
     it 'bash version should be 4.1.2-40.el6' do
       expect(package('bash')).to be_installed.with_version('4.1.2-40.el6')
@@ -19,7 +19,7 @@ end
 #end
 
 # Test for latest version of HTTPD
-control_group 'HTTPD Audit' do
+control_group ' *HTTPD Audit*' do
   control 'HTTPD Version Check' do
     it 'httpd version should be 2.2.15-53.el6.centos' do
       expect(package('httpd')).to be_installed.with_version('2.2.15-53.el6.centos')
@@ -27,8 +27,8 @@ control_group 'HTTPD Audit' do
   end
 end
 
-# Fix CVE-2014-0160 (aka. Heartbleed) Versions < openssl-1.0.1e-16.el6_5.7 are vulnerable
-control_group 'OPENSSL Audit' do
+# Fix CVE-2014-0160 (aka. Heartbleed) Versions < openssl-1.0.1e-16.el6_5.7 vulnerable
+control_group ' *OPENSSL Audit*' do
   control 'OPENSSL Version Check' do
     it 'openssl version should be 1.0.1e-48.el6_8.1' do
       expect(package('openssl')).to be_installed.with_version('1.0.1e-48.el6_8.1')
@@ -41,7 +41,7 @@ end
 # OS security hardening tests
 
 # This is a test of audit and compliance
-control_group 'Validate web services' do
+control_group ' *Validate web services*' do
   control 'Ensure no web files are owned by the root user' do
     Dir.glob('/var/www/html/**/*') {|web_file|
       it "#{web_file} is not owned by the root user" do
@@ -51,7 +51,7 @@ control_group 'Validate web services' do
   end
 end
 
-control_group 'Validate network configuration and firewalls' do
+control_group ' *Validate network configuration and firewalls*' do
   control 'Ensure the firewall is active' do
     it 'enables the iptables service' do
       expect(service('iptables')).to be_enabled
