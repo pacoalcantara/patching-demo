@@ -5,7 +5,7 @@
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
 # =========================================
-# Test for PACKAGE versions
+# Tests for PACKAGE versions
 
 # Fix Shellshock
 #if defined? node[:packages][:openssl][:version] && node[:packages][:openssl][:version] < node[:openssl][:req_version]
@@ -18,7 +18,7 @@ control_group 'BASH Audit' do
 end
 #end
 
-# Test for version of HTTPD
+# Test for latest version of HTTPD
 control_group 'HTTPD Audit' do
   control 'HTTPD Version Check' do
     it 'httpd version should be 2.2.15-53.el6.centos' do
@@ -37,9 +37,8 @@ control_group 'OPENSSL Audit' do
 end
 
 
-
 # =========================================
-# Test for OS security
+# OS security hardening tests
 
 # This is a test of audit and compliance
 control_group 'Validate web services' do
