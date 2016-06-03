@@ -16,7 +16,7 @@ iptables_rule 'firewall'
 # Install the httpd package.
 package 'httpd'
 =begin
-%w{ bash httpd openssl }.each do |pkg|
+%w{ bash openssl }.each do |pkg|
   package "#{pkg}" do
     action [ :install, :upgrade ]
   end
