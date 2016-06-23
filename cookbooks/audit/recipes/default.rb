@@ -6,7 +6,7 @@
 
 # =========================================
 # Tests for PACKAGE versions
-
+=begin
 # Fix Shellshock
 #if defined? node[:packages][:openssl][:version] && node[:packages][:openssl][:version] < node[:openssl][:req_version]
 control_group '=BASH Audit=' do
@@ -36,7 +36,7 @@ control_group '=OPENSSL Audit=' do
   end
 end
 
-
+=end
 
 # =========================================
 # OS security hardening tests
