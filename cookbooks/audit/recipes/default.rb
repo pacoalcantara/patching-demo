@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
-# =========================================
+# ========================================
 # Tests for PACKAGE versions
 =begin
 # Fix Shellshock
