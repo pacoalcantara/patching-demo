@@ -46,7 +46,7 @@ end
 # Add files to the site.
 %w(index.html pages/page1.html pages/page2.html).each do |web_file|
   file File.join('/var/www/html', web_file) do
-    content "<html> <body> <h1> Server patched! [#{web_file}] Hello World! </h1> </body> </html>"
+    content "<html> <body> <h1> This is file [#{web_file}] Hello World! </h1> </body> </html>"
     group 'web_admin'
     user 'web_admin'
   end
